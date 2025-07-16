@@ -1,0 +1,41 @@
+@import 'tailwindcss';
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+}
+
+.transcript {
+  padding: 32px;
+  height: 80vh;
+  overflow: auto;
+  /* margin: auto; */
+}
+
+.blocks {
+  margin-top: 12px;
+  /* display: flex;
+  flex-direction: column; */
+  gap: 12px;
+
+  /* height: 100px; */
+  overflow-y: scroll;
+}
+
+.block {
+  cursor: pointer;
+  padding: 2px;
+}
+
+.block:hover {
+  background-color: #e5eeff;
+}
+
+.block-highlighted {
+  background-color: #fef08a;
+}
+
+.audio {
+  width: 100%;
+}
