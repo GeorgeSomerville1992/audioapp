@@ -73,19 +73,4 @@ describe('App', () => {
       );
     });
   });
-
-  // it('Seeks audio to correct time on span click', async () => {
-  //   act(() => {
-  //     render(<App />);
-  //   })
-
-  //   const audio = await screen.findByTestId('test-audio');
-
-  //   // This block is 26.68 - 30.06s
-  //   act(async () => {
-  //     fireEvent.click(screen.getByText("Please be advised that today's conference is being recorded."));
-  //   });
-
-  //   expect(audio).toHaveProperty('currentTime', 26.68);
-  // });
 });

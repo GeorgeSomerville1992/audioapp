@@ -70,7 +70,7 @@ export const Home = () => {
   if (!data?.blocks.length) return <h2> No data </h2>;
 
   const { audioUrl, blocks } = data;
-
+  const { duration } = audioRef.current || { duration: 0 };
   return (
     <>
       <header className="bg-dark-grey w-screen pt-4 pb-4">
@@ -96,22 +96,24 @@ export const Home = () => {
               })}
           </ul>
         </div>
-        <audio ref={audioRef} controls id="audio" src={audioUrl} className="audio" data-testid="test-audio" hidden />
-        <button type="button" data-testid="test-play-button" aria-label="Play" onClick={togglePlay}>
-          Play
-        </button>
-        <button type="button" data-testid="test-pause-button" aria-label="Pause" onClick={togglePause}>
-          Pause
-        </button>
-        <input
-          type="range"
-          id="audio-scrubber"
-          aria-label="Audio Scrubber"
-          min="0"
-          max={audioRef.current?.duration}
-          value={audioTime}
-          onChange={handleScrubberChange}
-        />
+        <div className="controls">
+          <audio ref={audioRef} controls id="audio" src={audioUrl} className="audio" data-testid="test-audio" hidden />
+          <button type="button" data-testid="test-play-button" aria-label="Play" onClick={togglePlay}>
+            Play
+          </button>
+          <button type="button" data-testid="test-pause-button" aria-label="Pause" onClick={togglePause}>
+            Pause
+          </button>
+          <input
+            type="range"
+            id="audio-scrubber"
+            aria-label="Audio Scrubber"
+            min="0"
+            max={duration}
+            value={audioTime}
+            onChange={handleScrubberChange}
+          />
+        </div>
       </main>
       <footer className="mt-8 text-center text-gray-600 w-full bg-dark-grey flex fixed bottom-0 justify-center items-center">
         <p>© George</p>

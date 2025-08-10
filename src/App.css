@@ -6,6 +6,10 @@
   font-family: Inter, sans-serif;
 }
 
+header {
+  padding: 32px;
+}
+
 .transcript {
   padding: 32px;
   height: 80vh;
@@ -21,6 +25,15 @@
 
   /* height: 100px; */
   overflow-y: scroll;
+}
+
+.controls {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  max-width: 300px;
 }
 
 .block {

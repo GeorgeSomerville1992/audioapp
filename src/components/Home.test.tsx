@@ -22,19 +22,27 @@ vi.mock('../hooks/useTranscript', () => ({
 
 describe('Home Component', () => {
   it('renders loading state', () => {
-    mocks.useTranscript.mockReturnValue({ loading: true, data: null, error: null });
+    mocks.useTranscript.mockReturnValue({ loading: true, data: mockData, error: null });
     render(<Home />);
     expect(screen.getByText('Loading...')).toBeInTheDocument();
   });
 
   it('renders error state', () => {
-    mocks.useTranscript.mockReturnValue({ loading: false, data: null, error: 'Error' });
+    // @ts-expect-error test
+    mocks.useTranscript.mockReturnValue({ loading: false, data: mockData, error: 'Error' });
     render(<Home />);
     expect(screen.getByText('Error')).toBeInTheDocument();
   });
 
   it('renders no data state', () => {
-    mocks.useTranscript.mockReturnValue({ loading: false, data: { blocks: [] }, error: null });
+    mocks.useTranscript.mockReturnValue({
+      loading: false,
+      data: {
+        blocks: [],
+        audioUrl: '',
+      },
+      error: null,
+    });
     render(<Home />);
     expect(screen.getByText('No data')).toBeInTheDocument();
   });
