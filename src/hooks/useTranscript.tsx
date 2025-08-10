@@ -18,17 +18,14 @@ export const useTranscript = () => {
       const result = await response.json();
       setData(result);
     } catch (err: unknown) {
-      // additional logging for issue here
       setError(err instanceof Error ? err.message : 'Unknown error');
     } finally {
       setLoading(false);
     }
   };
-  // useTransscript will run teive regardless
+
   useEffect(() => {
-    console.log('running useEffect in useTranscript');
     if (!data) {
-      console.log('fetching transcript');
       fetchTranscript();
     }
   }, [data]);

@@ -14,16 +14,11 @@ header {
   padding: 32px;
   height: 80vh;
   overflow: auto;
-  /* margin: auto; */
 }
 
 .blocks {
   margin-top: 12px;
-  /* display: flex;
-  flex-direction: column; */
   gap: 12px;
-
-  /* height: 100px; */
   overflow-y: scroll;
 }
 
