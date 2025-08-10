@@ -20,3 +20,7 @@ When the audio player is scrubbed to a specific time, the correct block should b
 Notes:
 
 Unit tests are testing against data-testid s, so you should not remove/change any existing ones.
+
+Deployment link
+
+https://audioapp-jet.vercel.app/
